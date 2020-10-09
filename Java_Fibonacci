@@ -1,0 +1,30 @@
+
+import java.util.Scanner;
+
+public class java_Fibonacci {
+
+    public static void main(String[] args){
+
+        Scanner scan = new Scanner(System.in); // needed for the input
+
+        System.out.println("Insert a number and press enter : ");
+        int num = scan.nextInt(); // read the input
+        scan.close();
+
+        int res = fibonacci(num);   // uses the "num" input in fibonacci method and give a result "res"
+        System.out.println("The result is : " + res); // print "res"
+    }
+
+    public static int fibonacci(int n) {
+        if (n == 0) // base cases for fibonacci -> number 0 and 1
+            return 0;
+        else if (n == 1)
+            return 1;
+        else {      // obtain the fibonacci number
+            int fib1 = fibonacci(n-1);
+            int fib2 = fibonacci(n-2);
+            int res = fib1 + fib2;
+            return res;
+        }
+    }
+}
